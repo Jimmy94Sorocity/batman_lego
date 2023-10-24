@@ -1,0 +1,81 @@
+@use "variaveis";
+
+.faq {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+
+    h2 {
+        font-family: variaveis.$fonteLogo;
+        font-size: 32px;
+        color: variaveis.$corLogo;
+        text-align: center;
+        margin-top: 240px;
+        margin-bottom: 24px;
+
+        @media (max-width: 768px) {
+            font-size: 22px;
+            margin-top: 80px;
+        }
+    }
+
+    &__questions {
+        &__item {
+            background-color: variaveis.$corFAQ;
+            margin-bottom: 16px;
+
+            &__question {
+                color: variaveis.$corTexto;
+                font-size: 20px;
+                padding: 24px;
+                display: block;
+                cursor: pointer;
+                position: relative;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+
+                &::after {
+                    content: "+";
+                    position: absolute;
+                    top: 0;
+                    right: 24px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    font-size: 40px;
+
+                    @media (max-width: 768px) {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            &__answer {
+                height: 0;
+                overflow: hidden;
+                padding: 0 24px;
+                transition: height, .5s ease;
+                font-size: 16px;
+                color: variaveis.$corTexto;
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
+            }
+
+            &--is-open {
+                .faq__questions__item__question::after {
+                    content: "-";
+                }
+
+                .faq__questions__item__answer {
+                    height: auto;
+                    padding-bottom: 24px;
+                    transition: height, .5s ease;
+                }
+            }
+        }
+    }
+}

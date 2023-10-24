@@ -1,0 +1,38 @@
+@use "variaveis";
+
+.banner {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+
+    &__content {
+        .button {
+            margin-top: 72px;
+            margin-left: 275px;
+            color: variaveis.$corTexto;
+            background-color: variaveis.$corDeFundo;
+
+            @media (max-width: 768px) {
+                margin-top: 40px;
+                margin-left: 80px;
+                display: block;
+            }
+        }
+
+        &__title {
+            justify-content: center;
+            display: flex;
+            margin-top: 160px;
+            text-transform: uppercase;
+            font-family: variaveis.$fonteTitulo;
+            font-size: 72px;
+            color: variaveis.$corTitulo;
+
+            @media (max-width: 768px) {
+                font-size: 32px;
+                margin-top: 94px;
+                margin-left: 16px;
+            }
+        }
+    }
+}

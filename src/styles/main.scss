@@ -1,0 +1,38 @@
+@use "header";
+@use "variaveis";
+@use "banner";
+@use "faq";
+@use "footer";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-image: url(../../dist/images/batman_fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (max-width: 768px) {
+        background-image: url(../../dist/images/batman_fundo_celular.jpg);
+    }
+}
+
+.button {
+    height: 60px;
+    font-family: variaveis.$fonteBotao;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten(variaveis.$corDeFundo, 7%);
+    }
+}

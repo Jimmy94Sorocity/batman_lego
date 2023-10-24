@@ -1,0 +1,43 @@
+@use "variaveis";
+
+.footer { 
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+
+    &__container {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    &__links {
+        margin-top: 48px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__item {
+            display: inline-block;
+
+            a {
+                font-size: 20px;
+                color: variaveis.$corDeFundo;
+                text-decoration: none;
+                padding: 8px 16px;
+                display: block;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 18px;
+        color: variaveis.$corDeFundo;
+        margin-bottom: 16px;
+    }
+}
